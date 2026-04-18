@@ -1,0 +1,41 @@
+{
+  "name": "create-tally-holder",
+  "version": "0.1.0",
+  "description": "Spin up a Tally DHT holder node on commodity hardware — Raspberry Pi, VPS, homelab, anywhere Node 18+ runs.",
+  "type": "module",
+  "bin": {
+    "create-tally-holder": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "template",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "tally",
+    "qis",
+    "dht",
+    "holder",
+    "decentralized",
+    "ed25519"
+  ],
+  "author": "Yonder Zenith LLC",
+  "license": "MIT",
+  "homepage": "https://tally.qisprotocol.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yonderzenith/create-tally-holder"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.0"
+  }
+}

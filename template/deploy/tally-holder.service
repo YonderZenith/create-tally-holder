@@ -1,0 +1,36 @@
+[Unit]
+Description=Tally DHT Holder
+Documentation=https://tally.qisprotocol.com
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+# --- Edit these for your install ---
+User=tally
+WorkingDirectory=/opt/tally-holder
+# Use absolute path to node binary (find with: which node)
+ExecStart=/usr/bin/env node --import tsx/esm start.ts
+# ------------------------------------
+
+Restart=on-failure
+RestartSec=10s
+TimeoutStopSec=30s
+
+# Graceful shutdown: SIGTERM triggers signed /holders/leave + DB close
+KillMode=process
+KillSignal=SIGTERM
+
+StandardOutput=journal
+StandardError=journal
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/tally-holder/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
