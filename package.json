@@ -32,7 +32,7 @@
   "homepage": "https://tally.qisprotocol.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yonderzenith/create-tally-holder"
+    "url": "https://github.com/YonderZenith/create-tally-holder"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
